@@ -73,18 +73,20 @@ const App = () => {
 
   if (!loggedIn) {
     return (
-      <div className='loginform'>
-        <Form onSubmit={profileSubmit} method="GET" id='test'>
-          <FormGroup>
-            <Label for="user_name" className="col-2 ml-3">Username</Label>
-            <Input type="text" name="user_name" id="user_name" className="col-6 ml-3" placeholder="Sledge" />
-          </FormGroup>
-          <FormGroup>
-            <Label for="password" className="col-2 ml-3">Password</Label>
-            <Input type="password" name="password" id="password" className="col-6 ml-3" placeholder="codeplatoon" />
-          </FormGroup>
-          <Button type='submit' className="col-6 ml-3" form='test' >Submit</Button>
-        </Form>
+      <div className='loginbox'>
+        <div className='loginform'>
+          <Form onSubmit={profileSubmit} method="GET" id='test'>
+            <FormGroup>
+              <Label for="user_name" className="col-2 ml-3">Username</Label>
+              <Input type="text" name="user_name" id="user_name" className="col-6 ml-3" placeholder="Sledge" />
+            </FormGroup>
+            <FormGroup>
+              <Label for="password" className="col-2 ml-3">Password</Label>
+              <Input type="password" name="password" id="password" className="col-6 ml-3" placeholder="codeplatoon" />
+            </FormGroup>
+            <Button type='submit' className="col-6 ml-3" form='test' >Submit</Button>
+          </Form>
+        </div>
       </div>
     );
   } else {

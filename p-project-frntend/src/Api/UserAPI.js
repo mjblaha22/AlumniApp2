@@ -26,6 +26,7 @@ const fetchEvent = async () => {
   .then(data => data)
   return eventlist
 }
+
 const addEvent = (newEventObject) => {
   return fetch('http://127.0.0.1:8000/alumni/events/', {
     headers: {
@@ -35,6 +36,7 @@ const addEvent = (newEventObject) => {
     body: JSON.stringify(newEventObject)
   })
 }
+
 const deleteEvent = (event) => {
   return fetch(`http://127.0.0.1:8000/alumni/events/${event}`, {
     headers: {
@@ -43,6 +45,7 @@ const deleteEvent = (event) => {
     method: 'DELETE',
   })
 }
+
 const fetchLocation = async (map) => {
   let name = map.event_place.replace(' ', '+')
   let address = map.street_address.replace(' ', '+')
@@ -58,6 +61,7 @@ const fetchMessage = async () => {
   .then(data => data)
   return message
 }
+
 const fetchSearch = (search) => {
   let alumni = fetch(`${url}?filter={"where":{"title":{"ilike":"${search}"}}}`)
   .then(res => res.json())
